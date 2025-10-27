@@ -21,9 +21,6 @@ Built a matrix multiplication engine that can perform operations both sequential
 Matrix size: 1000x1000 | Threads: 4 | Time: 0.0441896 s
 ```
 
-- ✅ Scalable thread pool implementation
-- ✅ Memory-efficient matrix storage
-
 ## Learnings
 
 - **Parallel Programming**: How to break down matrix operations into parallel tasks
