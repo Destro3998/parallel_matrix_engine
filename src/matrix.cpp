@@ -56,7 +56,3 @@ Matrix Matrix::multiplyParallel(const Matrix& B, int numThreads) const {
     return C;
 }
 
-// LU decomposition placeholder
-void Matrix::LUDecompose() {
-    // You can implement Doolittle or Crout algorithm later
-}
