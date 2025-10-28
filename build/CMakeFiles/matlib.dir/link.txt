@@ -1,2 +1,0 @@
-/usr/bin/ar qc libmatlib.a CMakeFiles/matlib.dir/src/matrix.cpp.o CMakeFiles/matlib.dir/src/threadpool.cpp.o
-/usr/bin/ranlib libmatlib.a
