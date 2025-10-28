@@ -15,9 +15,9 @@ public:
     // Operations
     Matrix multiplySequential(const Matrix& B) const;
     Matrix multiplyParallel(const Matrix& B, int numThreads) const;
-    void LUDecompose(); // placeholder
+    void LUDecompose();
 
 private:
     size_t r_, c_;
-    std::vector<double> data_; // row-major
+    std::vector<double> data_; // row major
 };
