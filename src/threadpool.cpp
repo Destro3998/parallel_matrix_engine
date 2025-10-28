@@ -1,10 +1,12 @@
 #include "threadpool.hpp"
 
+// specified number of worker threads
 ThreadPool::ThreadPool(size_t numThreads) {
     for(size_t i=0; i<numThreads; ++i)
         workers_.emplace_back([this](){ workerLoop(); });
 }
 
+// queue tasks
 void ThreadPool::workerLoop() {
     while(true){
         std::function<void()> task;
@@ -19,6 +21,7 @@ void ThreadPool::workerLoop() {
     }
 }
 
+// add to queue
 void ThreadPool::enqueue(std::function<void()> task) {
     {
         std::unique_lock<std::mutex> lock(queueMutex_);
@@ -27,6 +30,7 @@ void ThreadPool::enqueue(std::function<void()> task) {
     condition_.notify_one();
 }
 
+// destructor
 ThreadPool::~ThreadPool() {
     {
         std::unique_lock<std::mutex> lock(queueMutex_);
